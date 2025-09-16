@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Google</title>
+  <link rel="stylesheet" href="style.css"  type="text/css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class="body" onload="Init()">
+  <div id="bar">
+    <a href="https://www.google.pl/" class="main">Google</a>
+    <a href="https://www.google.pl/imghp">Grafika</a>
+    <a href="https://translate.google.pl/">Translate</a>
+    <a href="https://www.google.pl/maps/@50.036736,19.9196672,12z">Mapy</a>
+    <a href="https://keep.google.com/">Keep</a>
+    <a href="https://www.youtube.com/">YouTube</a>
+    <a href="https://mail.google.com/mail/">Gmail</a>
+    <a onclick="SetIframeContent(document.getElementById('ifr'), 'w60h')">Pogoda 60h</a>
+    <a onclick="SetIframeContent(document.getElementById('ifr'), 'airly')">Airly</a>
+    <a href="https://online.mbank.pl/">mBank</a>
+    <a href="https://www.google.com/settings/account" class="account"></a>
+  </div>
+  <img src="google.png"  height="32" width="93" class="google_logo" alt="Google">
+  <form method="get" id="google_search" action="http://www.google.pl/search" target="_self">
+    <input spellcheck="false" id="search_input" name="q" type="text">
+    <input type="submit" value="" class="search_button">
+  </form>
+  <div id="clockbox"></div>
+  <iframe scrolling="no" onload="IframeLoaded(this)" style="display: none;" id="ifr">Widget (iframe)</iframe>
+  <script src="script.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+.body
+{
+  background: black url(start.jpg) no-repeat;
+  background-size: cover;
+  font-family: "Segoe UI", "Verdana";
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  min-width: 760px;
+}
+
+#clockbox
+{
+  background: #2d2d2d;
+  bottom: 0;
+  color: #bbb;
+  font-size: 16px;
+  height: 24px;
+  width: 100%;
+  text-align: right;
+  position: fixed;
+  -moz-user-select: none;
+  z-index: 991;
+}
+
+#bar
+{
+  background: #2d2d2d;
+  height: 30px;
+  -moz-user-select: none;
+}
+
+.account
+{
+  background: url(gear.png) no-repeat center;
+  float: right;
+  height: 30px;
+  width: 16px;
+}
+
+a
+{
+  color: #bbb;
+  cursor: pointer;
+  line-height: 30px;
+  padding: 0 10px;
+  text-decoration: none;
+}
+
+.main,
+a:hover
+{
+  color: #fff;
+}
+
+.google_logo
+{
+  left: 100px;
+  position: absolute;
+  top: 66px;
+}
+
+#search_input
+{
+  font-family: "Segoe UI", "Verdana";
+  font-size: 18px;
+  font-weight: bold;
+  height: 28px;
+  margin: 34px 0 0 220px;
+  padding-left: 8px;
+  width: 440px;
+  vertical-align: middle;
+}
+
+.search_button
+{
+  background: #4d90fe url(search.png) no-repeat center;
+  border: 1px solid #3079ed;
+  border-radius: 2px;
+  height: 32px;
+  width: 70px;
+  margin: 34px 0 0 2px;
+  vertical-align: middle;
+}
+
+.search_button:active
+{
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#ifr
+{
+  border: 5px solid #fffbf0;
+  border-radius: 5px;
+  box-shadow: 5px 5px #2d2d2d;
+  left: 32px;
+  position: absolute;
+  top: 122px;
+}
+
+/**** jQuery UI ****/
+
+.ui-menu
+{
+  border: 1px solid #404040;
+  list-style: none;
+  margin: 0;
+  padding: 1px;
+    left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 992
+}
+
+.ui-menu .ui-menu-item
+{
+  margin: 0;
+  padding: 0;
+}
+
+.ui-menu .ui-menu-item a
+{
+  cursor: default;
+  display: block;
+  line-height: 1.5;
+  min-height: 0;
+  padding: 2px .4em;
+}
+
+.ui-menu,
+.ui-menu .ui-menu-item a:hover
+{
+  background: #2d2d2d;
+  color: #bbb;
+}
+
+.ui-menu .ui-state-focus,
+.ui-menu a.ui-state-focus:hover
+{
+  background: #bbb;
+  color: #2d2d2d;
+}
