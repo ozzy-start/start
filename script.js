@@ -94,7 +94,7 @@ function SetIframeContent(iframe, type)
     if(type == 'w60h')
     {
       html = html.replace('url01', '<img src="https://old.meteo.pl/um/metco/leg_um_pl_cbase_256.png" alt="Legenda">');
-      html = html.replace('url02', '<img src="https://old.meteo.pl/um/metco/mgram_pict.php?ntype=0u&amp;row=466&amp;col=232&amp;lang=pl" alt="Prognoza"');
+      html = html.replace('url02', '<img src="https://old.meteo.pl/um/metco/mgram_pict.php?ntype=0u&amp;row=466&amp;col=232&amp;lang=pl" class="weather" alt="Prognoza"');
       
       iframe.style.height = '0px';
       iframe.style.width  = '0px';
