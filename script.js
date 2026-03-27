@@ -50,79 +50,28 @@ function Init()
   return input.autocomplete(opts);
 }
 
-function IframeLoaded(iframe)
+function ShowWeather()
 {
-  iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
-  iframe.style.width = iframe.contentWindow.document.body.scrollWidth + "px";
-}
-
-function SetIframeContent(iframe, type)
-{
-  var html = '\
-  \n<!DOCTYPE html>\
-  \n<html>\
-  \n  <body style="background: #fffbf0; margin: 0; cursor: pointer;" onclick="IframeHide()">\
-  \n    <script type="text/javascript">\
-  \n      function IframeHide()\
-  \n      {\
-  \n        var iframe = parent.document.getElementById(\'ifr\')\
-  \n        iframe.style.display = \'none\';\
-  \n        iframe.contentWindow.document.open(\'text/html\', \'replace\');\
-  \n        iframe.contentWindow.document.write(\'<!DOCTYPE html><html></html>\');\
-  \n        iframe.contentWindow.document.close();\
-  \n        parent.document.body.style.minWidth = \'760px\';\
-  \n        parent.document.body.style.minHeight = \'0px\';\
-  \n      }\
-  \n    </script>\
-  \n    <table><tr>\
-  \n    <td>url01</td>\
-  \n    <td>url02</td>\
-  \n    </tr></table>\
-  \n  </body>\
-  \n</html>';
+  weather = document.getElementById('weather');
+  tag     = document.getElementById('weather_tag');
+  img     = document.getElementById('weather_img');
   
-  if(parent.document.getElementById('ifr').style.display != 'none')
+  if(weather.style.display != 'none')
   {
-    parent.document.getElementById('ifr').style.display = 'none';
-    parent.document.body.style.minWidth = '760px';
-    parent.document.body.style.minHeight = '0px';
+    weather.style.display = 'none';
+    parent.document.body.style.height = '0px';
     
-    html = '<!DOCTYPE html><html></html>';
+    tag.src = '';
+    img.src = '';
   }
   else
-  {
-    if(type == 'w60h')
-    {
-      html = html.replace('url01', '<img src="https://old.meteo.pl/um/metco/leg_um_pl_cbase_256.png" alt="Legenda">');
-      html = html.replace('url02', '<img src="https://old.meteo.pl/um/metco/mgram_pict.php?ntype=0u&amp;row=466&amp;col=232&amp;lang=pl" class="weather" alt="Prognoza"');
-      
-      iframe.style.height = '0px';
-      iframe.style.width  = '0px';
-      iframe.style.border = '5px solid #fffbf0'
-      
-      parent.document.body.style.minHeight = '830px';
-      parent.document.body.style.minWidth  = '960px';
-    }
-    else
-    {
-      html = html.replace('url01', '<script src="https://airly.eu/map/airly.js" type="text/javascript"></script><iframe src="https://airly.eu/map/widget.html#lat=50.02132&lng=19.93861&w=320&h=330&l=pl&m=true&i=true" style="width:320px;height:330px;border:none;"></iframe>');
-      html = html.replace('<td>url02</td>', '');
-      html = html.replace('fffbf0', 'ffffff');
-      
-      iframe.style.height = '0px';
-      iframe.style.width  = '0px';
-      iframe.style.border = '5px solid #ffffff'
-      
-      parent.document.body.style.minHeight = '640px';
-      parent.document.body.style.minWidth  = '760px';
-    }
+  {    
+    weather.style.display = 'inline-block';
+    parent.document.body.style.height = '880px';
     
-    iframe.style.display = 'inline';
+    tag.src = 'https://old.meteo.pl/um/metco/leg_um_pl_cbase_256.png';
+    img.src = 'https://old.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=466&col=232&lang=pl';
   }
-  
-  iframe.contentWindow.document.open('text/html', 'replace');
-  iframe.contentWindow.document.write(html);
-  iframe.contentWindow.document.close();
 }
 
 function GetClock()
