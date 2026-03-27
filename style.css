@@ -60,6 +60,12 @@ a:hover
   top: 66px;
 }
 
+.weather
+{
+  object-fit: none;
+  object-position: -120px 0;
+}
+
 #search_input
 {
   font-family: "Segoe UI", "Verdana";
