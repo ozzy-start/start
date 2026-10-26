@@ -50,30 +50,6 @@ function Init()
   return input.autocomplete(opts);
 }
 
-function ShowWeather()
-{
-  weather = document.getElementById('weather');
-  tag     = document.getElementById('weather_tag');
-  img     = document.getElementById('weather_img');
-  
-  if(weather.style.display != 'none')
-  {
-    weather.style.display = 'none';
-    parent.document.body.style.height = '0px';
-    
-    tag.src = '';
-    img.src = '';
-  }
-  else
-  {    
-    weather.style.display = 'inline-block';
-    parent.document.body.style.height = '880px';
-    
-    tag.src = 'https://old.meteo.pl/um/metco/leg_um_pl_cbase_256.png';
-    img.src = 'https://old.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=466&col=232&lang=pl';
-  }
-}
-
 function GetClock()
 {
   var d = new Date();
